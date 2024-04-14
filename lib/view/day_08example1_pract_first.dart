@@ -20,45 +20,22 @@ class _AnimalCardsListState extends State<AnimalCardsList> {
 
   addData() {
     animalList.add(AnimalList(
-        name: "벌",
-        imagePath: "images/bee.png",
-        species: "곤충",
-        feature: "귀여워요"));
+        name: "벌", imagePath: "images/bee.png", species: "곤충", flyExist: true));
     animalList.add(AnimalList(
         name: "고양이",
         imagePath: "images/cat.png",
         species: "포유류",
-        feature: "귀여워요"));
+        flyExist: true));
     animalList.add(AnimalList(
         name: "소",
         imagePath: "images/cow.png",
         species: "포유류",
-        feature: "귀여워요"));
+        flyExist: true));
     animalList.add(AnimalList(
         name: "강아지",
         imagePath: "images/dog.png",
         species: "포유류",
-        feature: "귀여워요"));
-    animalList.add(AnimalList(
-        name: "여우",
-        imagePath: "images/fox.png",
-        species: "포유류",
-        feature: "귀여워요"));
-    animalList.add(AnimalList(
-        name: "돼지",
-        imagePath: "images/pig.png",
-        species: "포유류",
-        feature: "귀여워요"));
-    animalList.add(AnimalList(
-        name: "원숭이",
-        imagePath: "images/monkey.png",
-        species: "영장류",
-        feature: "귀여워요"));
-    animalList.add(AnimalList(
-        name: "늑대",
-        imagePath: "images/wolf.png",
-        species: "포유류",
-        feature: "귀여워요"));
+        flyExist: true));
   }
 
   @override
@@ -133,7 +110,7 @@ class _AnimalCardsListState extends State<AnimalCardsList> {
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             content: Text(
-                '종류는: ${animalList[index].species}\n특징은: ${animalList[index].feature}',
+                '종류는: ${animalList[index].species}\n특징은: ${animalList[index].flyExist}',
                 style: const TextStyle(
                     fontSize: 16, fontWeight: FontWeight.normal)),
             actions: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:second_flutter_pract/tab/home3.dart';
+import 'package:second_flutter_pract/tab/home4.dart';
 import 'package:second_flutter_pract/view/day_06example1.dart';
 import 'package:second_flutter_pract/view/day_06example2.dart';
 import 'package:second_flutter_pract/view/day_06example3_timer.dart';
@@ -14,7 +15,7 @@ import 'package:second_flutter_pract/view/day_07example4_listview_first.dart';
 import 'package:second_flutter_pract/view/day_07example5_insertlistview_second.dart';
 import 'package:second_flutter_pract/view/day_07example5_listview_first.dart';
 import 'package:second_flutter_pract/view/day_08example1_pract_first.dart';
-import 'package:second_flutter_pract/view/day_08example2.dart';
+import 'package:second_flutter_pract/view/day_08example2FirstPage.dart';
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_firstpage.dart'; //안쓸꺼니까 지워
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_secondpage.dart'; //안쓸꺼니까 지워
 
@@ -156,10 +157,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // 라우트 잡을 것이다
-      routes: {
-        '/': (context) => const AnimalCardsList(),
-      },
-      initialRoute: '/',
+      home: const Home4(),
     );
   }
 }
