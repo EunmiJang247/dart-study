@@ -12,15 +12,18 @@ class _DetailListState extends State<DetailList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('자세히보기')),
+        appBar: AppBar(title: const Text('자세히보기')),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(Message.workList),
               Image.asset(
                 Message.imagePath,
-              )
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Text(Message.workList),
+              ),
             ],
           ),
         ));

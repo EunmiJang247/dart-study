@@ -4,4 +4,5 @@ class Message {
   static String imagePath = "";
   static bool action = false;
   static List<int> doneList = [];
+  static String whatTodo = "";
 }

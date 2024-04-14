@@ -128,24 +128,6 @@ class MyApp extends StatelessWidget {
   // }
 
   // 리스트뷰 두번째 예제
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     title: 'Flutter Demo',
-  //     theme: ThemeData(
-  //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-  //       useMaterial3: true,
-  //     ),
-  //     // 라우트 잡을 것이다
-  //     routes: {
-  //       '/': (context) => const TableList(),
-  //       '/insert': (context) => const InsertList(),
-  //     },
-  //     initialRoute: '/',
-  //   );
-  // }
-
-  // 동물카드 실습
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -156,9 +138,27 @@ class MyApp extends StatelessWidget {
       ),
       // 라우트 잡을 것이다
       routes: {
-        '/': (context) => const AnimalCardsList(),
+        '/': (context) => const TableList(),
+        '/insert': (context) => const InsertList(),
       },
       initialRoute: '/',
     );
   }
+
+  // 동물카드 실습
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'Flutter Demo',
+  //     theme: ThemeData(
+  //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  //       useMaterial3: true,
+  //     ),
+  //     // 라우트 잡을 것이다
+  //     routes: {
+  //       '/': (context) => const AnimalCardsList(),
+  //     },
+  //     initialRoute: '/',
+  //   );
+  // }
 }

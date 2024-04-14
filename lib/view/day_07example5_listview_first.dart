@@ -56,7 +56,7 @@ class _TableListState extends State<TableList> {
               itemBuilder: (context, index) {
                 return Dismissible(
                   direction: DismissDirection.endToStart, //오른쪽에서 왼쪽으로 밀때
-                  key: ValueKey(index), //인덱스 번호 보내면돼
+                  key: ValueKey(todoList[index]), //인덱스 번호 보내면돼
                   onDismissed: (direction) {
                     todoList.remove(todoList[index]);
                     setState(() {});
@@ -84,7 +84,8 @@ class _TableListState extends State<TableList> {
                         MaterialPageRoute(
                             builder: (context) =>
                                 const DetailList()), //디테일 화면으로 가라
-                      ).then((value) => rebuildCardColor(index));
+                      );
+                      // .then((value) => rebuildCardColor(index));
                     },
                     child: Card(
                       color: todoList[index].listColor,
@@ -119,9 +120,9 @@ class _TableListState extends State<TableList> {
     setState(() {});
   }
 
-  rebuildCardColor(index) {
-    todoList[index].listColor = Colors.green;
-    todoList[index].imagePath = 'images/pikachu-1.jpg';
-    setState(() {});
-  }
+  // rebuildCardColor(index) {
+  //   todoList[index].listColor = Colors.green;
+  //   todoList[index].imagePath = 'images/pikachu-1.jpg';
+  //   setState(() {});
+  // }
 }
