@@ -14,6 +14,7 @@ import 'package:second_flutter_pract/view/day_07example4_listview_first.dart';
 import 'package:second_flutter_pract/view/day_07example5_insertlistview_second.dart';
 import 'package:second_flutter_pract/view/day_07example5_listview_first.dart';
 import 'package:second_flutter_pract/view/day_08example1_pract_first.dart';
+import 'package:second_flutter_pract/view/day_08example2.dart';
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_firstpage.dart'; //안쓸꺼니까 지워
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_secondpage.dart'; //안쓸꺼니까 지워
 
@@ -128,24 +129,6 @@ class MyApp extends StatelessWidget {
   // }
 
   // 리스트뷰 두번째 예제
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      // 라우트 잡을 것이다
-      routes: {
-        '/': (context) => const TableList(),
-        '/insert': (context) => const InsertList(),
-      },
-      initialRoute: '/',
-    );
-  }
-
-  // 동물카드 실습
   // @override
   // Widget build(BuildContext context) {
   //   return MaterialApp(
@@ -156,9 +139,27 @@ class MyApp extends StatelessWidget {
   //     ),
   //     // 라우트 잡을 것이다
   //     routes: {
-  //       '/': (context) => const AnimalCardsList(),
+  //       '/': (context) => const TableList(),
+  //       '/insert': (context) => const InsertList(),
   //     },
   //     initialRoute: '/',
   //   );
   // }
+
+  // 동물카드 실습
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      // 라우트 잡을 것이다
+      routes: {
+        '/': (context) => const AnimalCardsList(),
+      },
+      initialRoute: '/',
+    );
+  }
 }

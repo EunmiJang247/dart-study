@@ -18,9 +18,10 @@ class _InsertListState extends State<InsertList> {
   void initState() {
     textEditingController = TextEditingController();
     super.initState();
-    _purchaseSwitch = false;
+    _purchaseSwitch = true;
     _appointmentSwitch = false;
     _studySwitch = false;
+    Message.imagePath = 'images.cart.png';
   }
 
   @override
@@ -30,37 +31,46 @@ class _InsertListState extends State<InsertList> {
         body: Column(
           children: [
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text('구매'),
+              const Text('구매'),
               Switch(
                   value: _purchaseSwitch,
                   onChanged: (value) {
                     _purchaseSwitch = value;
-                    onPurchanseBtnClick(value);
+                    _appointmentSwitch = false;
+                    _studySwitch = false;
+                    switchValueCheck();
                     setState(() {});
                   }),
-              Image.asset('images/cart.png')
+              Image.asset(
+                'images/cart.png',
+                width: 40,
+              )
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text('약속'),
+              const Text('약속'),
               Switch(
                   value: _appointmentSwitch,
                   onChanged: (value) {
                     _appointmentSwitch = value;
-                    onAppointmentBtnClick(value);
+                    _purchaseSwitch = false;
+                    _studySwitch = false;
+                    switchValueCheck();
                     setState(() {});
                   }),
-              Image.asset('images/clock.png')
+              Image.asset('images/clock.png', width: 40)
             ]),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text('공부'),
+              const Text('공부'),
               Switch(
                   value: _studySwitch,
                   onChanged: (value) {
                     _studySwitch = value;
-                    onStudyBtnClick(value);
+                    _appointmentSwitch = false;
+                    _purchaseSwitch = false;
+                    switchValueCheck();
                     setState(() {});
                   }),
-              Image.asset('images/pencil.png')
+              Image.asset('images/pencil.png', width: 40)
             ]),
             TextField(
               controller: textEditingController,
@@ -89,30 +99,9 @@ class _InsertListState extends State<InsertList> {
     Message.action = true;
   }
 
-  onPurchanseBtnClick(value) {
-    if (value) {
-      if (_appointmentSwitch || _studySwitch) {
-        _appointmentSwitch = false;
-        _studySwitch = false;
-      }
-    }
-  }
-
-  onAppointmentBtnClick(value) {
-    if (value) {
-      if (_purchaseSwitch || _studySwitch) {
-        _purchaseSwitch = false;
-        _studySwitch = false;
-      }
-    }
-  }
-
-  onStudyBtnClick(value) {
-    if (value) {
-      if (_appointmentSwitch || _purchaseSwitch) {
-        _appointmentSwitch = false;
-        _purchaseSwitch = false;
-      }
+  switchValueCheck() {
+    if (!_appointmentSwitch && !_studySwitch && !_purchaseSwitch) {
+      _purchaseSwitch = true;
     }
   }
 }
