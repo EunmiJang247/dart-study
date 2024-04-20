@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:second_flutter_pract/model/user.dart';
 
 class AfterLogin extends StatefulWidget {
   const AfterLogin({super.key, required this.id});

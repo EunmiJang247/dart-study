@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:second_flutter_pract/model/user.dart';
 import 'package:second_flutter_pract/view/day_09example1_afterLogin.dart';
 
 class LoginFirst extends StatefulWidget {
