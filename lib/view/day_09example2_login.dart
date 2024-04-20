@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:second_flutter_pract/model/user.dart';
 import 'package:second_flutter_pract/tab/home4.dart';
-import 'package:second_flutter_pract/view/day_08example1_pract_first.dart';
-import 'package:second_flutter_pract/view/day_09example1_afterLogin.dart';
 
 class LoginSecond extends StatefulWidget {
   const LoginSecond({super.key});

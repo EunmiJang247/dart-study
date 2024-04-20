@@ -71,7 +71,11 @@ class _Home4State extends State<Home4> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('ListView Test')),
+      appBar: AppBar(
+        title: const Text('동물친구찾기'),
+        backgroundColor: Colors.blue,
+        foregroundColor: Colors.white,
+      ),
       body: TabBarView(
         controller: controller,
         children: [
