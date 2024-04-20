@@ -38,45 +38,69 @@ class _TableListWheelListInsertState extends State<TableListWheelListInsert> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Add View Wheel')),
+        appBar: AppBar(title: const Text('Add View Wheel')),
         body: Column(
           children: [
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Image.asset('images/${_imageName[_selectedItem]}'),
-              SizedBox(
-                width: 200,
-                height: 250,
-                child: CupertinoPicker(
-                    itemExtent: 50,
-                    scrollController:
-                        FixedExtentScrollController(initialItem: 0),
-                    onSelectedItemChanged: (value) {
-                      _selectedItem = value;
-                      setState(() {});
-                    },
-                    children: List.generate(
-                        _imageName.length,
-                        (index) => Center(
-                              child: Image.asset(
-                                'images/${_imageName[index]}',
-                                width: 50,
-                              ),
-                            ))),
-              ),
-            ]),
-            TextField(
-              controller: textEditingController,
-              decoration: const InputDecoration(labelText: '목록을 입력하세요'),
-              keyboardType: TextInputType.text,
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child:
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Image.asset('images/${_imageName[_selectedItem]}'),
+                SizedBox(
+                  width: 120,
+                  height: 150,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: CupertinoPicker(
+                        backgroundColor: Colors.blue,
+                        itemExtent: 50,
+                        scrollController:
+                            FixedExtentScrollController(initialItem: 0),
+                        onSelectedItemChanged: (value) {
+                          _selectedItem = value;
+                          setState(() {});
+                        },
+                        children: List.generate(
+                            _imageName.length,
+                            (index) => Center(
+                                  child: Image.asset(
+                                    'images/${_imageName[index]}',
+                                    width: 50,
+                                  ),
+                                ))),
+                  ),
+                ),
+              ]),
             ),
-            ElevatedButton(
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: TextField(
+                controller: textEditingController,
+                decoration: const InputDecoration(labelText: '목록을 입력하세요'),
+                keyboardType: TextInputType.text,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              child: ElevatedButton(
                 onPressed: () {
                   if (textEditingController.text.trim().isNotEmpty) {
                     addList();
                   }
                   Navigator.pop(context);
                 },
-                child: const Text('OK'))
+                child: const Text('OK'),
+                style: ElevatedButton.styleFrom(
+                    minimumSize: Size(80, 40),
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    )
+                    //모양바꾸기
+                    ),
+              ),
+            )
           ],
         ));
   }
