@@ -24,10 +24,10 @@ class _LampStaticSecondState extends State<LampStaticSecond> {
 
     if (Lamp.colorValue) {
       colorValue = true;
-      colorLabel = "RED";
+      colorLabel = "YELLOW";
     } else {
       colorValue = false;
-      colorLabel = "YELLOW";
+      colorLabel = "RED";
     }
 
     if (Lamp.switchValue) {
@@ -60,9 +60,9 @@ class _LampStaticSecondState extends State<LampStaticSecond> {
                       onChanged: (value) {
                         colorValue = value;
                         if (value) {
-                          colorLabel = "RED";
-                        } else {
                           colorLabel = "YELLOW";
+                        } else {
+                          colorLabel = "RED";
                         }
                         setState(() {});
                       }),

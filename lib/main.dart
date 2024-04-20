@@ -21,6 +21,9 @@ import 'package:second_flutter_pract/view/day_09example1_login.dart';
 import 'package:second_flutter_pract/view/day_09example2_login.dart';
 import 'package:second_flutter_pract/view/day_09example3_staticFirst.dart';
 import 'package:second_flutter_pract/view/day_09example4_lampstaticFirst.dart';
+import 'package:second_flutter_pract/view/day_09example5_wheelPract.dart';
+import 'package:second_flutter_pract/view/day_09example6_wheelPract_insert.dart';
+import 'package:second_flutter_pract/view/day_09example6_wheelPract_list.dart';
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_firstpage.dart'; //안쓸꺼니까 지워
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_secondpage.dart'; //안쓸꺼니까 지워
 
@@ -215,6 +218,34 @@ class MyApp extends StatelessWidget {
   // }
 
   // 로그인 실습 4번째
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'Flutter Demo',
+  //     theme: ThemeData(
+  //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  //       useMaterial3: true,
+  //     ),
+  //     // 라우트 잡을 것이다
+  //     home: const LampStaticFirst(),
+  //   );
+  // }
+
+  // 휠 예제
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'Flutter Demo',
+  //     theme: ThemeData(
+  //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  //       useMaterial3: true,
+  //     ),
+  //     // 라우트 잡을 것이다
+  //     home: const WheelPract(),
+  //   );
+  // }
+
+  // 휠예제2
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -224,7 +255,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // 라우트 잡을 것이다
-      home: const LampStaticFirst(),
+      routes: {
+        '/': (context) => const TableListWheelList(),
+        '/insert': (context) => const TableListWheelListInsert(),
+      },
+      initialRoute: '/',
     );
   }
 }

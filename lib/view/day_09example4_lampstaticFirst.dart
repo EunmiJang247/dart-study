@@ -39,12 +39,10 @@ class _LampStaticFirstState extends State<LampStaticFirst> {
                     } else {
                       lampImage = 'images/lamp_on.png';
                     }
-                    setState(() {});
-                    //
                   } else {
                     lampImage = 'images/lamp_off.png';
-                    setState(() {});
                   }
+                  setState(() {});
                 });
               },
               icon: const Icon(Icons.edit),
