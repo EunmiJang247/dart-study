@@ -25,6 +25,7 @@ import 'package:second_flutter_pract/view/day_09example5_wheelPract.dart';
 import 'package:second_flutter_pract/view/day_09example6_wheelPract_insert.dart';
 import 'package:second_flutter_pract/view/day_09example6_wheelPract_list.dart';
 import 'package:second_flutter_pract/view/day_10example1_collectionView.dart';
+import 'package:second_flutter_pract/view/day_10example2_collectionView.dart';
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_firstpage.dart'; //안쓸꺼니까 지워
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_secondpage.dart'; //안쓸꺼니까 지워
 
@@ -265,6 +266,20 @@ class MyApp extends StatelessWidget {
   // }
 
   //컬렉션뷰 예제
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'Flutter Demo',
+  //     theme: ThemeData(
+  //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  //       useMaterial3: true,
+  //     ),
+  //     // 라우트 잡을 것이다
+  //     home: const CollectionViewFirst(),
+  //   );
+  // }
+
+  //컬렉션뷰 예제2
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -274,7 +289,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // 라우트 잡을 것이다
-      home: const CollectionViewFirst(),
+      home: const CollectionViewSecond(),
     );
   }
 }

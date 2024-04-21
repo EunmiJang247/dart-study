@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:second_flutter_pract/model/collection_message.dart';
 import 'package:second_flutter_pract/view/day_10example1_detailView.dart';
+import 'package:second_flutter_pract/view/day_10example1_insertView.dart';
 
 class CollectionViewFirst extends StatefulWidget {
   const CollectionViewFirst({super.key});
@@ -33,6 +35,15 @@ class _CollectionViewFirstState extends State<CollectionViewFirst> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('삼국지 인물'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const InsertViewFirst();
+                  })).then((value) => getData());
+                },
+                icon: const Icon(Icons.add_outlined))
+          ],
         ),
         body: GridView.builder(
             itemCount: heroList.length,
@@ -68,5 +79,12 @@ class _CollectionViewFirstState extends State<CollectionViewFirst> {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
       return DetailHeroFirst(heroName: heroList[index]);
     }));
+  }
+
+  getData() {
+    if (CollectionMessage.humanName.trim().isNotEmpty) {
+      heroList.add(CollectionMessage.humanName);
+      setState(() {});
+    }
   }
 }
