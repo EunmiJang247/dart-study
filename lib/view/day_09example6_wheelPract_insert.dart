@@ -89,16 +89,14 @@ class _TableListWheelListInsertState extends State<TableListWheelListInsert> {
                   }
                   Navigator.pop(context);
                 },
-                child: const Text('OK'),
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size(80, 40),
+                    minimumSize: const Size(80, 40),
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.blue,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
-                    )
-                    //모양바꾸기
-                    ),
+                    )),
+                child: const Text('OK'),
               ),
             )
           ],

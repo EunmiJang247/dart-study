@@ -24,6 +24,7 @@ import 'package:second_flutter_pract/view/day_09example4_lampstaticFirst.dart';
 import 'package:second_flutter_pract/view/day_09example5_wheelPract.dart';
 import 'package:second_flutter_pract/view/day_09example6_wheelPract_insert.dart';
 import 'package:second_flutter_pract/view/day_09example6_wheelPract_list.dart';
+import 'package:second_flutter_pract/view/day_10example1_collectionView.dart';
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_firstpage.dart'; //안쓸꺼니까 지워
 // import 'package:second_flutter_pract/view/day_07example2_tabbar_secondpage.dart'; //안쓸꺼니까 지워
 
@@ -246,6 +247,24 @@ class MyApp extends StatelessWidget {
   // }
 
   // 휠예제2
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'Flutter Demo',
+  //     theme: ThemeData(
+  //       colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  //       useMaterial3: true,
+  //     ),
+  //     // 라우트 잡을 것이다
+  //     routes: {
+  //       '/': (context) => const TableListWheelList(),
+  //       '/insert': (context) => const TableListWheelListInsert(),
+  //     },
+  //     initialRoute: '/',
+  //   );
+  // }
+
+  //컬렉션뷰 예제
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -255,11 +274,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // 라우트 잡을 것이다
-      routes: {
-        '/': (context) => const TableListWheelList(),
-        '/insert': (context) => const TableListWheelListInsert(),
-      },
-      initialRoute: '/',
+      home: const CollectionViewFirst(),
     );
   }
 }

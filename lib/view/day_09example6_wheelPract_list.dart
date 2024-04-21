@@ -40,13 +40,13 @@ class _TableListWheelListState extends State<TableListWheelList> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Main View'),
+          title: const Text('Main View'),
           actions: [
             IconButton(
               onPressed: () => Navigator.pushNamed(context, '/insert')
                   .then((value) => rebuildData()),
               // 두번째 화면에서 핑 오면 여기서부터 시작이야.
-              icon: Icon(Icons.plus_one_rounded),
+              icon: const Icon(Icons.plus_one_rounded),
             )
           ],
         ),
